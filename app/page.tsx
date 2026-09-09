@@ -65,9 +65,11 @@ export default function Home() {
     }
   }, []);
 
+  const API_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
+
   const fetchUserKits = async (token: string) => {
     try {
-      const res = await fetch('http://localhost:5000/api/kits', {
+      const res = await fetch(`${API_BASE_URL}/api/kits`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (res.ok) {
@@ -122,7 +124,7 @@ export default function Home() {
       const headers: Record<string, string> = { 'Content-Type': 'application/json' };
       if (authToken) headers['Authorization'] = `Bearer ${authToken}`;
 
-      const res = await fetch('http://localhost:5000/api/kits', {
+      const res = await fetch(`${API_BASE_URL}/api/kits`, {
         method: 'POST',
         headers,
         body: JSON.stringify({ jd, company_url: companyUrl, days })
@@ -159,7 +161,7 @@ export default function Home() {
       const headers: Record<string, string> = { 'Content-Type': 'application/json' };
       if (authToken) headers['Authorization'] = `Bearer ${authToken}`;
 
-      const res = await fetch('http://localhost:5000/api/kits/batch', {
+      const res = await fetch(`${API_BASE_URL}/api/kits/batch`, {
         method: 'POST',
         headers,
         body: JSON.stringify({ cases })
@@ -191,7 +193,7 @@ export default function Home() {
     }
 
     try {
-      const res = await fetch(`http://localhost:5000/api/kits/${currentKitDoc._id}/regenerate-section`, {
+      const res = await fetch(`${API_BASE_URL}/api/kits/${currentKitDoc._id}/regenerate-section`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -241,7 +243,7 @@ export default function Home() {
   const handleSavePracticeProgress = async (confidences: Record<string, 'easy' | 'medium' | 'hard'>) => {
     if (!currentKitDoc?._id || !authToken) return;
     try {
-      await fetch(`http://localhost:5000/api/kits/${currentKitDoc._id}/practice`, {
+      await fetch(`${API_BASE_URL}/api/kits/${currentKitDoc._id}/practice`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
