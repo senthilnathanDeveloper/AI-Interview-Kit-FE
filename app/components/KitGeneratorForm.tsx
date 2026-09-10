@@ -63,22 +63,20 @@ export default function KitGeneratorForm({ onSubmit, onBatchSubmit, isGenerating
           <button
             type="button"
             onClick={() => setActiveTab('single')}
-            className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all ${
-              activeTab === 'single'
-                ? 'bg-indigo-600 text-white shadow-md'
-                : 'text-gray-400 hover:text-white'
-            }`}
+            className={`cursor-pointer px-3 py-1.5 text-xs font-semibold rounded-lg transition-all ${activeTab === 'single'
+              ? 'bg-indigo-600 text-white shadow-md'
+              : 'text-gray-400 hover:text-white'
+              }`}
           >
             Single Job
           </button>
           <button
             type="button"
             onClick={() => setActiveTab('batch')}
-            className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all flex items-center gap-1 ${
-              activeTab === 'batch'
-                ? 'bg-indigo-600 text-white shadow-md'
-                : 'text-gray-400 hover:text-white'
-            }`}
+            className={`cursor-pointer px-3 py-1.5 text-xs font-semibold rounded-lg transition-all flex items-center gap-1 ${activeTab === 'batch'
+              ? 'bg-indigo-600 text-white shadow-md'
+              : 'text-gray-400 hover:text-white'
+              }`}
           >
             <Layers className="w-3.5 h-3.5" />
             Batch Upload
@@ -143,7 +141,7 @@ export default function KitGeneratorForm({ onSubmit, onBatchSubmit, isGenerating
           <button
             type="submit"
             disabled={isGenerating || !jd.trim()}
-            className="w-full py-3.5 px-6 gradient-btn text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/20 disabled:opacity-50"
+            className="cursor-pointer w-full py-3.5 px-6 gradient-btn text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/20 disabled:opacity-50"
           >
             {isGenerating ? (
               <>

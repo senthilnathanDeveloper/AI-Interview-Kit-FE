@@ -273,9 +273,6 @@ export default function Home() {
             <div>
               <h1 className="text-base font-bold text-white tracking-tight flex items-center gap-2">
                 Interview Prep Kit
-                <span className="text-[10px] font-bold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded-full border border-indigo-500/30">
-                  Pro v1.0
-                </span>
               </h1>
               <p className="text-[11px] text-gray-400">Multi-pass research & schedule builder</p>
             </div>
@@ -290,7 +287,7 @@ export default function Home() {
                 </div>
                 <button
                   onClick={handleLogout}
-                  className="px-3 py-1.5 bg-white/5 hover:bg-white/10 text-gray-300 rounded-lg text-xs font-semibold flex items-center gap-1.5 border border-white/10 transition-colors"
+                  className="cursor-pointer px-3 py-1.5 bg-white/5 hover:bg-white/10 text-gray-300 rounded-lg text-xs font-semibold flex items-center gap-1.5 border border-white/10 transition-colors"
                 >
                   <LogOut className="w-3.5 h-3.5" /> Logout
                 </button>
@@ -347,11 +344,10 @@ export default function Home() {
                     setCurrentKitDoc(doc);
                     setCurrentKit(doc.kitData);
                   }}
-                  className={`px-3.5 py-2 rounded-xl text-xs font-semibold text-left shrink-0 transition-all border ${
-                    currentKitDoc?._id === doc._id
-                      ? 'bg-indigo-600 text-white border-indigo-400 shadow-lg'
-                      : 'bg-slate-900/60 text-gray-300 border-white/10 hover:border-white/20'
-                  }`}
+                  className={`px-3.5 py-2 rounded-xl text-xs font-semibold text-left shrink-0 transition-all border ${currentKitDoc?._id === doc._id
+                    ? 'bg-indigo-600 text-white border-indigo-400 shadow-lg'
+                    : 'bg-slate-900/60 text-gray-300 border-white/10 hover:border-white/20'
+                    }`}
                 >
                   <p className="font-bold">{doc.company}</p>
                   <p className="text-[10px] opacity-80">{doc.title}</p>
@@ -417,11 +413,10 @@ export default function Home() {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id as any)}
-                    className={`px-4 py-3 text-xs font-bold border-b-2 flex items-center gap-2 shrink-0 transition-all ${
-                      isActive
-                        ? 'border-indigo-500 text-indigo-400 bg-indigo-500/5'
-                        : 'border-transparent text-gray-400 hover:text-white'
-                    }`}
+                    className={`cursor-pointer px-4 py-3 text-xs font-bold border-b-2 flex items-center gap-2 shrink-0 transition-all ${isActive
+                      ? 'border-indigo-500 text-indigo-400 bg-indigo-500/5'
+                      : 'border-transparent text-gray-400 hover:text-white'
+                      }`}
                   >
                     <Icon className="w-4 h-4" />
                     {tab.label}
@@ -437,7 +432,7 @@ export default function Home() {
                   <h3 className="text-lg font-bold text-white">Company Research Brief</h3>
                   <button
                     onClick={() => handleRegenerateSection('brief')}
-                    className="px-3 py-1.5 bg-white/5 hover:bg-white/10 text-xs text-indigo-300 border border-white/10 rounded-lg flex items-center gap-1.5 transition-colors"
+                    className="cursor-pointer px-3 py-1.5 bg-white/5 hover:bg-white/10 text-xs text-indigo-300 border border-white/10 rounded-lg flex items-center gap-1.5 transition-colors"
                   >
                     <RefreshCw className="w-3.5 h-3.5" /> Regenerate Brief
                   </button>
@@ -492,11 +487,10 @@ export default function Home() {
                         <div className="flex items-center justify-between">
                           <span className="text-xs font-mono font-bold text-indigo-300">{req.id}</span>
                           <div className="flex items-center gap-1.5">
-                            <span className={`px-2 py-0.5 text-[10px] font-extrabold uppercase rounded-md border ${
-                              req.priority === 'must'
-                                ? 'bg-red-500/10 text-red-400 border-red-500/30'
-                                : 'bg-blue-500/10 text-blue-400 border-blue-500/30'
-                            }`}>
+                            <span className={`px-2 py-0.5 text-[10px] font-extrabold uppercase rounded-md border ${req.priority === 'must'
+                              ? 'bg-red-500/10 text-red-400 border-red-500/30'
+                              : 'bg-blue-500/10 text-blue-400 border-blue-500/30'
+                              }`}>
                               {req.priority}
                             </span>
                             <span className="px-2 py-0.5 text-[10px] font-bold text-gray-400 bg-white/5 rounded-md">
@@ -534,11 +528,10 @@ export default function Home() {
                       <button
                         key={cat}
                         onClick={() => setQuestionCategoryFilter(cat)}
-                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold capitalize transition-all ${
-                          questionCategoryFilter === cat
-                            ? 'bg-indigo-600 text-white'
-                            : 'bg-slate-900/60 text-gray-400 hover:text-white border border-white/5'
-                        }`}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold capitalize transition-all ${questionCategoryFilter === cat
+                          ? 'bg-indigo-600 text-white'
+                          : 'bg-slate-900/60 text-gray-400 hover:text-white border border-white/5'
+                          }`}
                       >
                         {cat}
                       </button>
