@@ -65,7 +65,7 @@ export default function Home() {
     }
   }, []);
 
-  const API_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
+  const API_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://ai-interview-kit-be.vercel.app';
 
   const fetchUserKits = async (token: string) => {
     try {
